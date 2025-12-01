@@ -1,0 +1,11 @@
+datasets==4.2.0
+torch==2.8.0 
+transformers==4.56.2 
+trl==0.23.0 
+accelerate==1.10.1 
+bitsandbytes==0.48.1 
+unsloth==2025.10.1 
+evaluate==0.4.6 
+bert_score==0.3.13 
+rouge_score==0.1.2 
+nltk==3.9.2
