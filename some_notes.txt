@@ -1,0 +1,8 @@
+- we need to set up a model such that we can train LoRa adapters.
+- we need to set up a model with quantization to save some computation.
+all this can be done during loading of the model. 
+    - In the notebook is done by specifying both in section 6.3.2. in 2 stages with FastLanguageModel.from_pretrained() and FastLanguageModel.get_peft_model();
+    - in the professor's github code it is done by specifying both in 1 stage, with AutoModelForCausalLMWithValueHead(). This one allow you to prepare your model to LoRa.
+If we manage to setup unsloth it might be more efficient, and we might be able to use bigger models.
+
+- once we defined our GRPOTrainer, we cannot simply use its .train() method since it assumes a static dataset. We can collect batches and perform the training with the .step() method
