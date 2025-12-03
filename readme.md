@@ -6,4 +6,5 @@ I would suggest to copy the notebook files with your own version or create new o
 - create a virtual environment and install the dependencies.
 - i personally prefer to use `uv` as a venv.
 - after creating a venv, install the dependencies with `pip install -r requirements.txt`
-**note**: i created a file containing the requirements with the version of `trl` having the `step()` method. Install that if you want to try to fix our problem.
+**note**: i created a file containing the requirements with the version of `trl` having the `step()` method. Install that if you want to try to fix our problem.  
+**additional note**: if you need an hf token for the model (not if you leave the default one), create a copy of secrets_template.yaml and rename it secrets.yaml.  Then, insert your HF_TOKEN!
