@@ -6,3 +6,6 @@ all this can be done during loading of the model.
 If we manage to setup unsloth it might be more efficient, and we might be able to use bigger models.
 
 - once we defined our GRPOTrainer, we cannot simply use its .train() method since it assumes a static dataset. We can collect batches and perform the training with the .step() method
+- sadly, trl library has removed the .step() method for both PPO and GRPO. we might need to use the old version trl==0.11 which, guess what, is not compatible with our version of unsloth.
+more precisely, if we downgrade trl to 0.11 we will get an import error with its compatible unsloth installation, which is fixed by an incompatible installation :D.
+we can try to patch the PPO trainer to include the .step() method again (https://github.com/jskaf34/trl/tree/reintroducing-step-ppo-method), or avoid using unsloth.
