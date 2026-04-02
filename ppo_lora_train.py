@@ -66,6 +66,7 @@ class Game:
             return self.ba_me, self.ba_op
         if my_action == self.act2 and their_action == self.act2:
             return self.bb_me, self.bb_op
+        return INVALID_ACTION_REWARD
  
     def payoff_table_str(self, opponent_name: str = "opponent") -> str:
         """Human-readable payoff table, ready to embed in a prompt."""
@@ -527,7 +528,7 @@ def _build_raw_messages(
     if last_player_action is None and last_opponent_action is None:
         history_line = "This is the first round. You have no prior history with this opponent."
     elif last_player_action is None and last_opponent_action is not None:
-        my_score, _ = game.lookup_score(last_player_action, last_opponent_action)
+        my_score = game.lookup_score(last_player_action, last_opponent_action)
         history_line = (
             f"Last round: you played an invalid action and scored {my_score} point(s)"
         )
